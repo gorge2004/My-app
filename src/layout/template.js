@@ -9,7 +9,9 @@ import Body from './body';
 import Home from '../home';
 import NoFound from '../noFound';
 import Contact from '../contact';
+import Client from '../client';
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+
 export default class Template extends React.Component {
     constructor(props){
         super(props);
@@ -18,12 +20,13 @@ export default class Template extends React.Component {
     render(){
         return (
             <Router>
-                <Grid container spacing={0} zeroMinWidth>
+                <Grid container spacing={0} >
                      <Navbar />
                     <Body>
                         <Switch>
                             <Route exact path="/"  component={Home}/>
-                            <Route path="/contact" component={Contact}  />
+                            <Route exact path="/contact" component={Contact}  />
+                            <Route exact path="/client" component={Client}  />
                             <Route  component={NoFound}/>
                         </Switch>
                     </Body>
